@@ -27,6 +27,14 @@ const Home: NextPage = () => {
       console.log(error);
     }
   }
+
+  const handleSubmit = (data: FormData) => {
+    try {
+      create(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <Head>
@@ -38,6 +46,7 @@ const Home: NextPage = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          handleSubmit(form);
         }}
         className="mix-w-[25%] mx-auto flex w-auto max-w-min flex-col items-stretch space-y-6"
       >
