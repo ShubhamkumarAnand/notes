@@ -3,15 +3,15 @@ import Head from "next/head";
 import { useState } from "react";
 
 interface FormData {
+  id: string;
   title: string;
   content: string;
-  id: string;
 }
 const Home: NextPage = () => {
   const [form, setForm] = useState<FormData>({
+    id: "",
     title: "",
     content: "",
-    id: "",
   });
 
   async function create(data: FormData) {
